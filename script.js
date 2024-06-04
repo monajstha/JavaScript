@@ -14,13 +14,13 @@ function getComputerChoice() {
   } else if (randomNum % 2 === 0) {
     return (computerChoice = "Paper");
   } else {
-    return (computerChoice = "scissors");
+    return (computerChoice = "Scissors");
   }
 }
 
 function getHumanChoice() {
   let humanChoice = prompt(
-    `Let's play Rock, Paper, scissors. The game continues for five rounds. Please choose one between Rock, Paper and Scissors.\n \n Round ${game_round}`
+    `Let's play Rock, Paper, Scissors. The game continues for five rounds. Please choose one between Rock, Paper and Scissors.\n \n Round ${game_round}`
   );
   return humanChoice;
 }
@@ -33,16 +33,16 @@ function playRound(human_choice, computer_choice) {
     console.log(`Round ${game_round}: You lose! Paper beats Rock`);
     computer_score++;
   } else if (human_choice === "scissors" && computer_choice === "paper") {
-    console.log(`Round ${game_round}: You win! scissors beats Paper`);
+    console.log(`Round ${game_round}: You win! Scissors beats Paper`);
     human_score++;
   } else if (human_choice === "paper" && computer_choice === "scissors") {
-    console.log(`Round ${game_round}: You lose! scissors beats Paper`);
+    console.log(`Round ${game_round}: You lose! Scissors beats Paper`);
     computer_score++;
   } else if (human_choice === "rock" && computer_choice === "scissors") {
-    console.log(`Round ${game_round}: You win! Rock beats scissors`);
+    console.log(`Round ${game_round}: You win! Rock beats Scissors`);
     human_score++;
   } else if (human_choice === "scissors" && computer_choice === "rock") {
-    console.log(`Round ${game_round}: You lose! Rock beats scissors`);
+    console.log(`Round ${game_round}: You lose! Rock beats Scissors`);
     computer_score++;
   } else if (human_choice === computer_choice) {
     console.log(
@@ -74,7 +74,7 @@ function playGame() {
       human_selection !== "scissors"
     ) {
       console.log(
-        "Please enter valid choices only! You entered: ",
+        "Please enter valid choices only! You entered:",
         human_selection
       );
       return;
