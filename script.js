@@ -106,5 +106,3 @@ function playGame() {
   }
   console.log("**************************************");
 }
-
-playGame();
