@@ -58,3 +58,54 @@ function playRound(human_choice, computer_choice) {
     return;
   }
 }
+
+function playGame() {
+  for (let i = 0; i < 5; i++) {
+    let computer_selection = getComputerChoice()?.toLowerCase();
+    let human_selection = getHumanChoice()?.toLowerCase();
+    // Checking the null value condition when the user cancels the prompt or provides empty value
+    if (!human_selection) {
+      console.log("Game is cancelled! Please refresh to restart");
+      return;
+    }
+    // Checking for values other than the valid choices
+    else if (
+      human_selection !== "rock" &&
+      human_selection !== "paper" &&
+      human_selection !== "scissors"
+    ) {
+      console.log(
+        "Please enter valid choices only! You entered: ",
+        human_selection
+      );
+      return;
+    } else {
+      playRound(human_selection, computer_selection);
+    }
+  }
+
+  console.log("\n");
+  console.log("**************************************");
+  console.log("Final Scores");
+
+  console.log("Computer Score: ", computer_score);
+  console.log("Your Score: ", human_score);
+  console.log("Tie: ", tie_count);
+
+  if (human_score > computer_score) {
+    console.log(`Result: You win! `);
+  } else if (computer_score > human_score) {
+    console.log(`Result: You lose! `);
+  } else if (
+    human_score > 0 &&
+    computer_score > 0 &&
+    human_score === computer_score
+  ) {
+    console.log(`Result: It was a tie!`);
+  } else {
+    return;
+  }
+  console.log("**************************************");
+}
+
+playGame();
