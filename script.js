@@ -16,3 +16,10 @@ function getComputerChoice() {
     return (computerChoice = "scissors");
   }
 }
+
+function getHumanChoice() {
+  let humanChoice = prompt(
+    "Let's play Rock, Paper, scissors. \nPlease choose one between Rock, Paper and scissors"
+  );
+  return humanChoice;
+}
