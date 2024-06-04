@@ -1,6 +1,7 @@
 let human_score = 0;
 let computer_score = 0;
 let tie_count = 0;
+let game_round = 1;
 
 function getComputerChoice() {
   let randomNum = Math.floor(Math.random() * 10);
@@ -19,35 +20,33 @@ function getComputerChoice() {
 
 function getHumanChoice() {
   let humanChoice = prompt(
-    "Let's play Rock, Paper, scissors. \nPlease choose one between Rock, Paper and scissors"
+    `Let's play Rock, Paper, scissors. The game continues for five rounds. Please choose one between Rock, Paper and Scissors.\n \n Round ${game_round}`
   );
   return humanChoice;
 }
 
-console.log("\n\n\n\n\n\n\n\n\n");
-
 function playRound(human_choice, computer_choice) {
   if (human_choice === "paper" && computer_choice === "rock") {
-    console.log("You win! Paper beats Rock");
+    console.log(`Round ${game_round}: You win! Paper beats Rock`);
     human_score++;
   } else if (human_choice === "rock" && computer_choice === "paper") {
-    console.log("You lose! Paper beats Rock");
+    console.log(`Round ${game_round}: You lose! Paper beats Rock`);
     computer_score++;
   } else if (human_choice === "scissors" && computer_choice === "paper") {
-    console.log("You win! scissors beats Paper");
+    console.log(`Round ${game_round}: You win! scissors beats Paper`);
     human_score++;
   } else if (human_choice === "paper" && computer_choice === "scissors") {
-    console.log("You lose! scissors beats Paper");
+    console.log(`Round ${game_round}: You lose! scissors beats Paper`);
     computer_score++;
   } else if (human_choice === "rock" && computer_choice === "scissors") {
-    console.log("You win! Rock beats scissors");
+    console.log(`Round ${game_round}: You win! Rock beats scissors`);
     human_score++;
   } else if (human_choice === "scissors" && computer_choice === "rock") {
-    console.log("You lose! Rock beats scissors");
+    console.log(`Round ${game_round}: You lose! Rock beats scissors`);
     computer_score++;
   } else if (human_choice === computer_choice) {
     console.log(
-      "Tie! Both chose",
+      `Round ${game_round}: Tie! Both chose`,
       human_choice
         .charAt(0)
         .toUpperCase()
@@ -81,16 +80,16 @@ function playGame() {
       return;
     } else {
       playRound(human_selection, computer_selection);
+      game_round++;
     }
   }
 
-  console.log("\n");
   console.log("**************************************");
   console.log("Final Scores");
 
   console.log("Computer Score: ", computer_score);
-  console.log("Your Score: ", human_score);
   console.log("Tie: ", tie_count);
+  console.log("Your Score: ", human_score);
 
   if (human_score > computer_score) {
     console.log(`Result: You win! `);
