@@ -80,7 +80,7 @@ function scoreLogic() {
   let result = "";
   setTimeout(() => {
     scoreDiv.removeChild(scoreHeading);
-  }, 600);
+  }, 1000);
 
   if (human_score > computer_score) {
     result = "You win!";
