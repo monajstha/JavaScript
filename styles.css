@@ -1,0 +1,17 @@
+img {
+  height: 150px;
+  width: 150px;
+  margin: 5px;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  /* gap: 150px; */
+  /* background-color: red; */
+}
+
+button {
+  padding: 10px 60px;
+  margin: 5px;
+}

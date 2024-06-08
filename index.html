@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@2.3.3/dist/purify.min.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
     <title>Rock Paper Scissors</title>
   </head>
   <body>
@@ -14,12 +16,20 @@
       consoled. After five rounds, the program calculates the total score of the
       user, the computer, the ties and finally decides a winner.
     </p>
-    <h2>How to play the game:</h2>
-    <ul>
-      <li>Turn on the inspect element on your browser</li>
-      <li>Click on the 'Start' button</li>
-      <li>Follow the instructions given on the prompt</li>
-    </ul>
-    <button onclick="playGame()">Start</button>
+    <h2>Please choose one</h2>
+
+    <div class="options-div">
+      <img src="./images/rock.jpeg" alt="Rock image" />
+      <img src="./images/paper.jpeg" alt="Paper image" />
+      <img src="./images/scissors.png" alt="Rock image" />
+      <div class="buttons-container">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+      </div>
+    </div>
+    <div class="score-div">
+      <table class="score-table"></table>
+    </div>
   </body>
 </html>
