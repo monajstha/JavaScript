@@ -78,11 +78,9 @@ function playRound(human_choice) {
 
 function scoreLogic() {
   let result = "";
-  console.log("**************************************");
-
-  console.log("Computer Score: ", computer_score);
-  console.log("Tie: ", tie_count);
-  console.log("Your Score: ", human_score);
+  setTimeout(() => {
+    scoreDiv.removeChild(scoreHeading);
+  }, 600);
 
   if (human_score > computer_score) {
     result = "You win!";
@@ -100,6 +98,7 @@ function scoreLogic() {
   finalScoreHeading.textContent = result;
 
   finalScoreData.textContent = `Computer Score: ${computer_score} \n Tie: ${tie_count} \n Your Score: ${human_score}`;
+
   scoreDiv.appendChild(finalScoreHeading);
   scoreDiv.appendChild(finalScoreData);
 }
